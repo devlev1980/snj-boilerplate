@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { InstitutionResearchComponent } from './components/yes-no-dialog/steps/institution-research/institution-research.component';
+import { ReaearchDetailsFormComponent } from './components/yes-no-dialog/steps/reaearch-details-form/reaearch-details-form.component';
+import { ResearchNameFormComponent } from './components/yes-no-dialog/steps/research-name-form/research-name-form.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   if (environment.simulateTranslations) {
@@ -27,6 +29,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NotFoundPageComponent,
     YesNoDialogComponent,
     InstitutionResearchComponent,
+    ReaearchDetailsFormComponent,
+    ResearchNameFormComponent,
   ],
   imports: [
     // Modules
