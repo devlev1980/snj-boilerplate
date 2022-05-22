@@ -5,6 +5,12 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { environment } from 'src/environments/environment';
+import { YesNoDialogComponent } from './components/yes-no-dialog/yes-no-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { InstitutionResearchComponent } from './components/yes-no-dialog/steps/institution-research/institution-research.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   if (environment.simulateTranslations) {
@@ -19,10 +25,15 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     NotFoundPageComponent,
+    YesNoDialogComponent,
+    InstitutionResearchComponent,
   ],
   imports: [
     // Modules
     CommonModule,
+    MatDialogModule,
+    MatListModule
+    ,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -30,6 +41,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
     // Componenets
 
     // Directives

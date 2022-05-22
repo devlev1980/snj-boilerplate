@@ -1,4 +1,7 @@
 export interface TestModel {
-    id: string;
-    text: string;
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+
 }

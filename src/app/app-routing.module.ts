@@ -7,7 +7,7 @@ import { NotFoundPageComponent } from 'src/app/shared/pages/not-found-page/not-f
 
 const routes: Routes = [
   {
-    path: AppPages.Home + "/:id",
+    path: AppPages.Home,
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {

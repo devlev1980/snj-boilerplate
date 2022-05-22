@@ -1,0 +1,24 @@
+@import "colors";
+@import "variables";
+@import "typography";
+@mixin debug{
+  border: 1px solid red;
+}
+@mixin flex-h{
+  display: flex;
+  align-items: center;
+}
+@mixin flex-v{
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-h-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

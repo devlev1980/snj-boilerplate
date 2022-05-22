@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { BaseRoutesComponent } from './base-routes/base-routes.component';
 import { I18nService } from 'src/app/core/services/i18n.service';
 import { DOCUMENT } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function initializeApp(i18n : I18nService, doc : Document): (() => Promise<any>) | (() => Observable<any>) {
   i18n.direction$.subscribe( d => {
@@ -31,6 +32,7 @@ export function initializeApp(i18n : I18nService, doc : Document): (() => Promis
     AppRoutingModule,
     SharedModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

@@ -11,6 +11,7 @@ import { GlobalLoaderInterceptor } from 'src/app/core/interceptors/global-loader
 import { AuthorizationService } from 'src/app/core/services/authorization.service';
 import { CurrentRequestsService } from 'src/app/core/services/current-requests.service';
 import { environment } from 'src/environments/environment';
+import {MatButtonModule} from '@angular/material/button';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -27,16 +28,17 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateModule,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-  ],
+    imports: [
+        CommonModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateModule,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient],
+            },
+        }),
+        MatButtonModule,
+    ],
   providers: [
     //services providers
     CurrentRequestsService,

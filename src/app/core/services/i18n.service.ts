@@ -41,8 +41,11 @@ export class I18nService {
     this.direction.next(direction);
   }
 
+  /**
+   * Cet the language from the route url if the language is undefined use default language
+   * @private
+   */
   private getCurrentRouteLanguagePrefix(): Language {
-    // get the language from the route url if the language is undefined use default language 
     return ((this.router.routerState.root.firstChild?.snapshot.url[0]?.path ?? this.translate.defaultLang) as Language)
   }
 

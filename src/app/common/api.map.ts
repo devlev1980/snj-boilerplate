@@ -6,9 +6,9 @@ export class ApiMap {
 
     public static readonly test: HttpRequest<TestModel[]> = new HttpRequest<TestModel[]>(
         "GET",
-        environment.apiBase + "/test-list"
+        environment.apiBase + "/posts"
     );
-    public static readonly isUserAuthroized: HttpRequest<null> = new HttpRequest<null>(
+    public static readonly isAuthorized: HttpRequest<null> = new HttpRequest<null>(
         "GET",
         //change the url to the authorization endpoint
         environment.apiBase + ""

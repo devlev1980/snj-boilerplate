@@ -11,18 +11,24 @@ export class AuthorizationService {
 
   authorize(): Observable<boolean> {
     let token = this.getToken();
-    return token ? this.isUserAuthroized(token) : of(false);
+    return token ? this.isAuthorized(token) : of(false);
   }
 
+  /**
+   * Change to localStorage or cookie if needed
+   */
   getToken(): string | null {
-    //change to localStorage or cookie if needed
     return sessionStorage.getItem('token');
   }
 
-  private isUserAuthroized(token: string): Observable<boolean> {
-    //send request to authorize to the server
-    //change the code if necessary to fit the application
-    return this.http.request(ApiMap.isUserAuthroized).pipe(
+  /**
+   * Send request to authorize to the server
+   * Change the code if necessary to fit the application
+   * @param token
+   * @private
+   */
+  private isAuthorized(token: string): Observable<boolean> {
+    return this.http.request(ApiMap.isAuthorized).pipe(
       filter((event): event is HttpResponse<unknown> => event instanceof HttpResponse),
       map((response: HttpResponse<unknown>) => {
         return !(response.status != 401 && response.status != 403);
